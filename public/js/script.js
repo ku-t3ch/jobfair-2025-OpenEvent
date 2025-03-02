@@ -3,6 +3,7 @@ var mainVideo = document.getElementById("main-video");
 var secondaryVideo = document.getElementById("secondary-video");
 
 document.getElementById("cont").style.display = "none";
+document.getElementById("cont2").style.display = "flex";
 
 const targetDate = new Date('2025-03-05T17:00:00+07:00');
 
@@ -14,7 +15,16 @@ function load() {
       month: 'long',
       day: 'numeric',
   });
-  document.getElementById("date").textContent = result;
+
+  let _hours = now.getHours();
+  let _minutes = now.getMinutes();
+  let _seconds = now.getSeconds();
+  // Add leading zeros if needed
+  _hours = (_hours < 10 ? "0" : "") + _hours;
+  _minutes = (_minutes < 10 ? "0" : "") + _minutes;
+  _seconds = (_seconds < 10 ? "0" : "") + _seconds;
+  let timeString = _hours + " : " + _minutes + " : " + _seconds;
+  document.getElementById("time1H").textContent = timeString;
 
   let difference = targetDate - now;
 
@@ -48,6 +58,7 @@ socket.on('index', (check) => {
 
       load()
       document.getElementById("cont").style.display = "flex";
+      document.getElementById("cont2").style.display = "none";
 
       setInterval(() => {
         load()
@@ -56,3 +67,7 @@ socket.on('index', (check) => {
     });
   }
 });
+
+setInterval(() => {
+  load()
+}, 1000);

@@ -15,7 +15,7 @@
 <body>
   <div class="video-container">
     <video id="main-video" autoplay loop muted>
-      <source src="assets/Bg.mp4" type="video/mp4">
+      <source src="assets/main_bg.mp4" type="video/mp4">
     </video>
   </div>
 
@@ -25,8 +25,14 @@
     </video>
   </div>
 
-  <!-- <img src="assets/LG-JobFair25.png" width="400px" class="logo-main"></img> -->
+  <div class="container" id="cont2">
+    <p id="dateH" style="font-weight: bold;">เวลาปัจจุบัน</p>
+    <div class="hover">
+      <text class="timeN mt-0 pt-0 Prompt" stlye="line-height: 10%" id="time1H"></text>
+    </div>
+  </div>
   <div class="container" id="cont">
+    <small id="date" class="fs-1 fw-light" style="font-weight: bold;">เหลือเวลาอีก</small>
     <div class="hover">
       <text class="time mt-0 pt-0 Prompt" stlye="line-height: 10%" id="time1"></text>
       <text class="time2 mt-0 pt-0 Prompt" stlye="line-height: 10%">วัน</text>
@@ -37,7 +43,6 @@
       <text class="time mt-0 pt-0 Prompt" stlye="line-height: 10%" id="time4"></text>
       <text class="time2 mt-0 pt-0 Prompt" stlye="line-height: 10%">วินาที</text>
     </div>
-    <small id="date" class="fs-1 fw-light">กำลังโหลด...</small>
   </div>
   <script src="/socket.io/socket.io.js"></script>
   <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>

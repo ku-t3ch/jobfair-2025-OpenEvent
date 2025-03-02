@@ -16,7 +16,7 @@ body {
   height: 100vh;
   font-family: 'Prompt', sans-serif;
   color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  margin-top: 1.2%;
 }
 
 .video-container {
@@ -27,6 +27,7 @@ body {
   height: 100%;
   z-index: -1;
   overflow: hidden;
+  object-fit: cover;
 }
 
 .video-container-2 {
@@ -37,6 +38,7 @@ body {
   height: 100%;
   z-index: 999;
   overflow: hidden;
+  object-fit: cover;
 }
 
 video {
@@ -53,17 +55,24 @@ video {
 .time {
   font-size: 100px;
   color: #087470;
-  text-shadow: 2px 2px 4px #000000;
   animation: pulse2 5s infinite;
+  font-weight: bold;
+}
+
+.timeN {
+  font-size: 150px;
+  color: #087470;
+  animation: pulse2 5s infinite;
+  font-weight: bold;
 }
 
 .time2 {
   font-size: 40px;
-  color: #064344;
-  text-shadow: 2px 2px 4px #000000;
+  color: #087470;
   animation: pulse2 5s infinite;
   margin: 0 20px;
   margin-bottom: 20px;
+  font-weight: 100;
 }
 
 .tapLogo {
@@ -125,4 +134,9 @@ video {
 
 #date {
   color: #087470;
+}
+#dateH {
+  color: #087470;
+  font-size: 60px;
+  font-weight: 100;
 }
