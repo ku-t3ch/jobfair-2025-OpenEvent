@@ -4,6 +4,10 @@
   font-family: 'Prompt', sans-serif !important;
 }
 
+body {
+  overflow: hidden;
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -13,10 +17,6 @@
   font-family: 'Prompt', sans-serif;
   color: white;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
-.time {
-  font-size: 48px;
 }
 
 .video-container {
@@ -51,14 +51,31 @@ video {
 }
 
 .time {
-  font-size: 256px;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+  font-size: 100px;
+  color: #087470;
+  text-shadow: 2px 2px 4px #000000;
+  animation: pulse2 5s infinite;
 }
 
-.tapLogo { 
+.time2 {
+  font-size: 40px;
+  color: #064344;
+  text-shadow: 2px 2px 4px #000000;
+  animation: pulse2 5s infinite;
+  margin: 0 20px;
+  margin-bottom: 20px;
+}
+
+.tapLogo {
   cursor: pointer;
-  animation: pulse 2s infinite
+  animation: pulse 2s infinite;
+}
+
+.hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 @keyframes pulse {
@@ -75,6 +92,20 @@ video {
   }
 }
 
+@keyframes pulse2 {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+  
+  100% {
+    transform: scale(1);
+  }
+}
+
 .flex {
   display: flex;
 }
@@ -83,4 +114,15 @@ video {
   max-width: 100%;
   align-items: center;
   justify-content: center;
+}
+
+.logo-main {
+  position: fixed;
+  top: 5%;
+  z-index: 1;
+  margin: auto;
+}
+
+#date {
+  color: #087470;
 }

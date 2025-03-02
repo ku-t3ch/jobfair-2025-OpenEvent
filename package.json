@@ -2,17 +2,17 @@
   "dependencies": {
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
-    "socket.io": "^4.6.1"
+    "socket.io": "^4.8.1"
   },
   "scripts": {
     "start": "npm install && nodemon server.js"
   },
-  "name": "techcamp-no1",
+  "name": "jobfair-2025",
   "version": "1.0.0",
   "main": "server.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Homiez09/TechCamp-No1.git"
+    "url": "git+https://github.com/ku-t3ch/jobfair-2025-OpenEvent.git"
   },
   "author": "",
   "license": "ISC",
