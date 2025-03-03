@@ -53,6 +53,7 @@ socket.on('index', (check) => {
   if (check) {
     secondaryVideo.style.display = "block";
     secondaryVideo.play();
+    secondaryVideo.removeAttribute('controls');
     secondaryVideo.addEventListener("ended", function () {
       secondaryVideo.style.display = "none";
 
