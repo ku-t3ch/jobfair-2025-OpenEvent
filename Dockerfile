@@ -1,26 +1,19 @@
-FROM node:18-alpine AS builder
+FROM node:18-alpine
 
-WORKDIR /app 
+RUN mkdir -p /home/node/app/node_modules
 
-COPY package.json package-lock.json ./
+WORKDIR /home/node/app
+
+COPY package*.json ./
 
 RUN npm install --omit=dev
 
-COPY . .
+RUN chown -R node:node /home/node/app
 
-RUN npm run start
+USER node
 
-# Production Image
-
-FROM node:18-alpine AS runner
-
-WORKDIR /app
-
-COPY --from=builder /app .
-COPY --from=builder /app/node_modules ./node_modules
-COPY --from=builder /app/server.js .
-COPY --from=builder /app/public ./public
+COPY --chown=node:node . .
 
 EXPOSE 3000
 
-CMD ["node", "server.js"]
+CMD [ "node", "server.js" ]
