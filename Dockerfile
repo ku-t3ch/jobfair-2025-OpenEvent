@@ -8,7 +8,7 @@ RUN npm install --omit=dev
 
 COPY . .
 
-RUN npm run build
+RUN npm run start
 
 # Production Image
 
@@ -16,10 +16,10 @@ FROM node:18-alpine AS runner
 
 WORKDIR /app
 
-COPY --from=builder /app/package.json ./
-COPY --from=builder /app/dist ./dist
-COPY --from=builder /app/server.js ./
+COPY --from=builder /app .
 COPY --from=builder /app/node_modules ./node_modules
+COPY --from=builder /app/server.js .
+COPY --from=builder /app/public ./public
 
 EXPOSE 3000
 
